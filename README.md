@@ -1,7 +1,5 @@
 # Node.js Template
 
-## Installation
-
 Clone the git repository:
 
 ```shell
