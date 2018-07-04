@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-template",
+  "version": "1.0.0",
+  "description": "A Node.js web app template",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Aakash Kc",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "express-handlebars": "*"
+  }
+}
