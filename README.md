@@ -1,18 +1,19 @@
 # Node.js Template
 
-Clone the git repository:
+A Node.js web app template using the Express web framework and the Handlebars templating engine.
 
+## Installation
+
+Clone the git repository:
 ```shell
 $ git clone https://github.com/aakashkcx/nodejs-template.git
 ```
-Open a termainl and use npm to install all the dependencies:
-
+Install the dependencies with npm:
 ```shell
 $ npm install
 ```
 
 Start the server:
-
 ```shell
 $ npm start
 ```
