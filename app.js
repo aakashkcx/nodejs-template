@@ -1,9 +1,10 @@
 // Imports
 const express = require('express')
-const app = express()
 const path = require('path')
 const exphbs = require('express-handlebars')
 const router = require('./routes')
+
+const app = express()
 const port = process.env.port || 8000
 
 // View engine
