@@ -11,5 +11,8 @@
   "dependencies": {
     "express": "*",
     "express-handlebars": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*"
   }
 }
