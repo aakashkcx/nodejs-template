@@ -9,6 +9,8 @@
   "author": "Aakash Kc",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
     "express": "*",
     "express-handlebars": "*"
   },
