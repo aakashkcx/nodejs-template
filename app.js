@@ -1,31 +1,38 @@
 'use strict';
 
+/**
+ * Imports
+ */
+
 // Dependencies
 const express = require('express');
+const expressHandlebars = require('express-handlebars');
 const path = require('path');
-const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
+const cookieParser = require('cookie-parser');
 
-// Components
+// Routes
 const routes = require('./routes/index');
+
+/**
+ * Initialise
+ */
 
 // Initialise app
 const app = express();
 
 // Set port
-app.set('port', (process.env.PORT || 8080));
+const PORT = process.env.PORT || 8080;
+app.set('port', PORT);
 
-// Routing
-app.use('/', routes);
+/**
+ * Middlewares
+ */
 
 // Set view engine
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs());
+app.engine('handlebars', expressHandlebars());
 app.set('view engine', 'handlebars');
-
-// Set static path
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Body-parser middleware
 app.use(bodyParser.json());
@@ -34,5 +41,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Cookie-parser middleware
 app.use(cookieParser());
 
-// Start the server
-app.listen(app.get('port'), () => console.log(`Server started on port ${app.get('port')}`));
+// Static path
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Routing
+app.use('/', routes);
+
+/**
+ * Start the server
+ */
+
+app.listen(PORT, () => console.log(`Server started...\nListening on port ${PORT}...`));
