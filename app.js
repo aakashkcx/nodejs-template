@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
 // Components
-const router = require('./routes');
+const routes = require('./routes/index');
 
 // Initialise app
 const app = express();
@@ -17,7 +17,7 @@ const app = express();
 app.set('port', (process.env.PORT || 8080));
 
 // Routing
-app.use('/', router);
+app.use('/', routes);
 
 // Set view engine
 app.set('views', path.join(__dirname, 'views'));
