@@ -10,6 +10,7 @@ const expressHandlebars = require('express-handlebars');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 // Routes
 const routes = require('./routes/index');
@@ -29,10 +30,12 @@ app.set('port', PORT);
  * Middlewares
  */
 
-// Set view engine
-app.set('views', path.join(__dirname, 'views'));
+// view engine
 app.engine('handlebars', expressHandlebars());
 app.set('view engine', 'handlebars');
+
+// HTTP request logger
+app.use(logger('dev'));
 
 // Body-parser middleware
 app.use(bodyParser.json());
